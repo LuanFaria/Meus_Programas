@@ -1,4 +1,3 @@
-#.
 from PyQt5.QtWidgets import QApplication, QMainWindow
 import sys
 from interface import *
@@ -21,7 +20,7 @@ class Converter(QMainWindow, Ui_MainWindow):
         self.dinheiro_2.addItems(['Dollar', 'Euro', 'Iene', 'Real'])
         self.convert.clicked.connect(self.calcular_conversor)
 
-        # Travar a saida do valor_2 para não editavel;
+        # Travar a saida do valor_2 para não editavel.
         self.valor_2.setDisabled(True)
 
         # Formatação CSS
@@ -157,8 +156,8 @@ class Converter(QMainWindow, Ui_MainWindow):
                 calcular = round(calcular, 4)
                 self.valor_1.setText(str(self.valor_1.text()))
                 self.valor_2.setText(str(calcular).replace('.', ','))
+                
         except:
-            # Não acontece nada enquanto não digitar um valor no input(valor_1)
             self.valor_1.setText(str(1))
             pass
 
